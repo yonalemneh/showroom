@@ -24,7 +24,7 @@
     'author': 'Flowcode Technology Solutions',
     'category': 'Sales Management',
     'website': 'http://www.flow-code.net',
-    'description': """Manage Shop For Every Sales Order""",
+    'description': """Manage Shop For Every Sales Order - Git""",
     'version': '10.0.1',
     'depends': ['sale'],
     'data': [
