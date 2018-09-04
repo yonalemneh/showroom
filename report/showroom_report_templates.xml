@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+<template id="showroom_report_document">
+        <t t-call="report.external_layout">
+            <t t-foreach="docs" t-as="doc">
+                <div class="page" style="font-size: 22px !important;">
+                    <h1>Showroom</h1>
+
+                    <div class="row mt32 mb32">
+                        <div class="col-xs-3">
+                            <strong>Showroom:</strong>
+                            <p t-field="doc.showroom_name"/>
+                        </div>
+
+                        <div class="col-xs-3">
+                            <strong>Contact:</strong>
+                            <p t-field="doc.showroom_contact"/>
+                        </div>
+                    </div>
+
+                </div>
+            </t>
+        </t>
+</template>
+</data>
+</odoo>

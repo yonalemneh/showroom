@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report
+            id="showroom_report"
+            string="Showroom"
+            model="showroom.showroom"
+            report_type="qweb-pdf"
+            name="showroom.showroom_report_document"
+            file="showroom.showroom_report_document"
+        />
+    </data>
+</odoo>

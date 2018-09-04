@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		
+		<record id="view_showroom_showroom_form" model="ir.ui.view">
+			<field name="name">view.showroom.showroom.form</field>
+			<field name="model">showroom.showroom</field>
+			<field name="arch" type="xml">
+				<form string="Showroom">
+				<sheet>
+					<group colspan="4" col="2">
+						<group>
+							<h1><field name="showroom" placeholder="Showroom Name"/></h1>
+						</group>
+						<br/>
+						<group>
+							<field name="showroom_contact"/>
+						</group>
+					</group>
+				</sheet>
+				</form>
+			</field>
+		</record>
+		
+		<record id="view_showroom_showroom_tree" model="ir.ui.view">
+			<field name="name">view.showroom.showroom.tree</field>
+			<field name="model">showroom.showroom</field>
+			<field name="arch" type="xml">
+				<tree string="showroom">
+					<field name="showroom"/>
+					<field name="showroom_contact"/>
+				</tree>
+			</field>
+		</record>
+
+		<record id="showroom_quotation_view_tree" model="ir.ui.view">
+			<field name="name">sale.order</field>
+			<field name="model">sale.order</field>
+			<field name="type">tree</field>
+			<field name="inherit_id" ref="sale.view_quotation_tree" />
+			<field name="arch" type="xml">
+				<field name="partner_id" position="after">
+					<field name="showroom_id" />
+				</field>
+			</field>
+    	</record>
+
+		<record id="showroom_add_view_tree" model="ir.ui.view">
+			<field name="name">sale.order</field>
+			<field name="model">sale.order</field>
+			<field name="type">tree</field>
+			<field name="inherit_id" ref="sale.view_order_tree" />
+			<field name="arch" type="xml">
+				<field name="partner_id" position="after">
+					<field name="showroom_id" />
+				</field>
+			</field>
+		</record>
+
+		<record id="showroom_view_order_form" model="ir.ui.view">
+			<field name="name">sale.order</field>
+			<field name="model">sale.order</field>
+			<field name="type">form</field>
+			<field name="inherit_id" ref="sale.view_order_form" />
+			<field name="arch" type="xml">
+				<field name="partner_id" position="after">
+					<field name="showroom_id"/>
+				</field>
+			</field>
+		</record>
+
+		<record id="action_showroom" model="ir.actions.act_window">
+			<field name="name">Showroom</field>
+			<field name="res_model">showroom.showroom</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		
+		<menuitem id="menu_showroom"
+			parent="sales_team.menu_sale_config"
+			action="action_showroom"
+			name="Showroom"/>
+		
+	</data>
+</openerp>
